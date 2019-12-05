@@ -60,7 +60,8 @@ Conforme se vayan recolectando peces la velocidad de las plataformas irá aument
 
 * 10 Peces la velocidad se aumenta al doble
 * 50 Peces la velocidad se aumenta al doble
-* 125 Peces la velocidad se aumenta al doble
+* 100 Peces la velocidad se aumenta al doble
+* 175 Peces la velocidad se aumenta al doble
 
 El objetivo es juntar la mayor cantidad de peces.
 

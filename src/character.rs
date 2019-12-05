@@ -208,9 +208,10 @@ impl Character {
             self.score += 1; //Aumenta el score del personaje
             self.map.map[self.coord.1 as usize][self.coord.0 as usize] = 0; //Quita el pez del mapa
 
-            if self.score == 10 { self.speed /= 2; } //Cuando se llega a un score de 10 aumenta la velocidad de las plataformas
-            if self.score == 50 { self.speed /= 2; } //Cuando se llega a un score de 50 aumenta la velocidad de las plataformas
-            if self.score == 125 { self.speed /= 2; }  //Cuando se llega a un score de 125 aumenta la velocidad de las plataformas
+            if self.score == 10 { self.speed = 64; } //Cuando se llega a un score de 10 aumenta la velocidad de las plataformas
+            if self.score == 50 { self.speed = 32; } //Cuando se llega a un score de 50 aumenta la velocidad de las plataformas
+            if self.score == 100 { self.speed = 16; }  //Cuando se llega a un score de 100 aumenta la velocidad de las plataformas
+            if self.score == 175 { self.speed = 8; }  //Cuando se llega a un score de 175 aumenta la velocidad de las plataformas
         }
 
         //Dependiendo del estado actual de personaje (switch)
@@ -325,7 +326,7 @@ impl Character {
         }
 
         //Este if ayuda a mover las plataformas
-        if self.it % self.speed == 7 { //Si el iterador de tiempo cumple la condición, bajan
+        if self.it % self.speed == 3 { //Si el iterador de tiempo cumple la condición, bajan
             let mut new_line:[u8; 20] = [0; 20]; //Nuevo vector para crear la nueva linea del mapa
 
             for _n in 0..64 { //Prueba 64 posibilidades de plataforma
