@@ -45,7 +45,7 @@ To verify that there are no problems running an application of these, go to the 
 	cargo web start --target=wasm32-unknown-unknown
 
 
-A local server will be created where you can run the project in `localhost: 8000` or the port that you dial in the terminal.
+A local server will be created where you can run the project in `localhost:8000` or the port that you dial in the terminal. You can easily open the link from the terminal.
 
 The first time it runs it will automatically download all the necessary packages and it may take a while.
 
