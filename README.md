@@ -1,30 +1,30 @@
-# Penguin Jumps - Proyecto de Teoría Computacional
+# Penguin Jumps - Computational Theory Project
 
 * **José Ángel Navarro Almendárez - 160963**
 
-* **Profesor: Juan Carlos González Ibarra**
+* **Professor: Juan Carlos González Ibarra**
 
 
-## Lenguaje
+## Language
 
-El lenguaje de programación utilizado para este proyecto es **Rust**.
+The programming language used for this project is **Rust***.
 
-Se utiliza **Rust** para compilar a un binario `.wasm`, que finalmente es tecnología **WebAssembly**. Esto indica decir que es una aplicación Web.
+**Rust** is used to compile to a binary `.wasm`, which is finally technology **WebAssembly**. This means that is a Web Application.
 
-Como herramientas secundarias se uso **HTML** y **Bootstrap 4** para darle diseño y **JavaScript** para agregar música y efectos de sonido, así comomostrar en pantalla los movimientos que va haciendo el personaje del juego.
+As secondary tools, **HTML** and **Bootstrap $** were used to give it design and **JavaScript** to add music and sound effects. thus showing on scrren the movements that the character of the game is making.
 
-## Instalación
+## Installation
 
-Para poder llevar a cabo la ejecución de este proyecto se deben tener varios puntos en consideración:
+In order to carry out the execution of this project, some points must be taken into consideration:
 
-#### 1. Lenguaje Rust
+#### 1. Rust Language
 
-Se debe descargar e instalar el lenguaje [**Rust**](https://www.rust-lang.org/tools/install "Instalación"), cuya instalación dependerá del sistema operativo.
-*Las pruebas se hicieron en un entorno Linux y se recomienda su uso para facilidad de pruebas*.
+[**Rust Lang**](https://www.rust-lang.org/tools/install "Instalación") must be downloaded and installed, whose isntallation will depend on the OperatingSystem.
+*The tests were done in a Linux environment and its use is recommended for ease of testing*.
 
-#### 2. Compilador WASM
+#### 2. WASM Compiler
 
-Para poder compilar nuestro código Rust a código **WebAssembly** necesitamos instalar esa opción de compilación, para ello usaremos `rustup` ejecutando los siguientes comandos en la terminal:
+In order to compile our Rust code to code ** WebAssembly ** we need to install that compilation option, for this we will use `rustup` by executing the following commands in the terminal:
 
 	rustup install nightly
 	rustup target add wasm32-unknown-unknown
@@ -32,46 +32,47 @@ Para poder compilar nuestro código Rust a código **WebAssembly** necesitamos i
 	cargo +nightly install wasm-bindgen-cli
 	cargo install -f cargo-web
 
-#### 3. Comprobación
+#### 3. Testing
 
-Para verificar su correcta instalación se puede correr el comando en la terminal:
+To verify its correct installation you can run the command in the terminal:
 
 	cargo web --version
 
-#### 4. Iniciar el servicio
+#### 4. Start the Server
 
-Para comprobar que ya no hay problemas al correr una aplicación de estas se debe ir a la carpeta del proyecto y correr el siguiente comando:
+To verify that there are no problems running an application of these, go to the project folder and run the following command:
 
 	cargo web start --target=wasm32-unknown-unknown
 
-Se creará un servidor local en donde se podrá correr el proyecto en  `localhost:8000` o el puerto que marque en la terminal.
 
-La primera vez que se ejecuta descargará automáticamente todos los paquetes necesarios y podría tomar un tiempo.
+A local server will be created where you can run the project in `localhost: 8000` or the port that you dial in the terminal.
+
+The first time it runs it will automatically download all the necessary packages and it may take a while.
 
 ## Penguin Jumps
 
-El proyecto trata de un pingüino que está en pantalla y que deberá de saltar por ellas para ir recolectando peces que aparecen en la esquina superior derecha. Para recolectarlos solo es necesario tocarlos y el puntaje se autoicrementará.
+The project is about a penguin that is on screen and must jump through them to collect fish that appear in the upper right corner. To collect them it is only necessary to touch them and the score will auto-increase.
 
-Inicialmente dispone de dos vidas, que están marcadas en la parte superior izquiera de la pantalla, pero a lo largo del juego puden ir apareciendo más, aunque para recolctarlas es necesario pararse sobre ellas y presionar el botón hacia abajo. Se pueden acumular un máximo de 4 vidas.
+Initially it has two lives, which are marked in the upper left of the screen, but throughout the game they can appear more, although to collect them it is necessary to stand on them and press the button down. A maximum of 4 lives can be accumulated.
 
-Tanto los peces, como las vidas y las plataformas (tanto ancho como posición) aparecerán aleatoriamente en pantalla.
+Fish, lives and platforms (both width and position) will appear randomly on the screen.
 
-Conforme se vayan recolectando peces la velocidad de las plataformas irá aumentando de la siguiente manera:
+As fish are collected, the speed of the platforms will increase as follows:
 
-* 10 Peces la velocidad se aumenta al doble
-* 50 Peces la velocidad se aumenta al doble
-* 100 Peces la velocidad se aumenta al doble
-* 175 Peces la velocidad se aumenta al doble
+* 10 Fish, speed is doubled
+* 50 Fish, speed is doubled
+* 100 Fish, speed is doubled
+* 175 Fish, speed is doubled
 
-El objetivo es juntar la mayor cantidad de peces.
+The goal is to collect the most fish.
 
-### Controles de movimiento
+### Controls
 
 | Tecla | Función |
 |-|-|
-Up, W | Saltar
-Down, S | Agacharse
-Left, A | Moverse a la izquierda
-Right, D | Moverse a la derecha
-SPACE | Comenzar/Reiniciar partida
-S + W, Down + Up | Bajar plataforma
+Up, W | Jump
+Down, S | Crouch
+Left, A | Left
+Right, D | Right
+SPACE | Start/Restart
+S + W, Down + Up | Go Down
